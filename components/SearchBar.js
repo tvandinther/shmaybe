@@ -1,13 +1,25 @@
+import { useState } from "react";
+
 function SearchBar({ setValue }) {
+
+    const [inputValue, setInputValue] = useState('')
 
     const handleInput = (event) => {
         let input = event.target.value;
-        setValue(input);
+        setInputValue(input);
+        if (event.key === 'Enter') {
+            setValue(inputValue);
+        }
+    }
+
+    const handleClick = (event) => {
+        setValue(inputValue);
     }
 
     return (
         <div>
-            <input id="SearchInput" type="text" placeholder="Enter keyword" onInput={handleInput}></input>
+            <input id="SearchInput" type="text" placeholder="Search" onKeyPress={handleInput}></input>
+            <button onClick={handleClick}>Search</button>
         </div>
     )
 }
