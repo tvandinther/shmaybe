@@ -3,10 +3,6 @@
   margin-bottom: 5px;
 }
 
-.courseItemList.BSCH {
-  background-color: blue;
-}
-
 /* purgecss start ignore */
 @tailwind base;
 h1 {
@@ -35,7 +31,7 @@ article a {
 }
 
 .btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  @apply bg-blue-500 text-white font-bold py-2 px-4 mb-3 rounded;
 }
 .btn-blue:hover {
   @apply bg-blue-700;
@@ -45,15 +41,31 @@ article a {
 }
 
 input {
-  @apply w-3/4 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-600;
+  @apply flex-1 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
-.courseItemList.BSCH, .courseItemList.BSC {
-  @apply bg-blue-200;
+.courseItemList {
+  @apply rounded py-2 px-4;
 }
+
+/* .courseItemList.BSCH, .courseItemList.BSC {
+  
+} */
 
 .courseItemList.BSCH:hover, .courseItemList.BSC:hover {
   @apply bg-blue-300;
+}
+
+.faculty-science {
+  @apply bg-blue-200;
+}
+
+select {
+  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
+}
+
+label {
+  @apply py-2;
 }
 
 @tailwind components;

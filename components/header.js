@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 const MenuItem = ({ children, href }) =>
   <Link href={href}>
@@ -9,18 +9,13 @@ const MenuItem = ({ children, href }) =>
 
 function Header ({ user, loading }) {
   return (
-    <header className='bg-orange-300'>
+    <header className='bg-blue-300'>
       <nav className='container flex items-center justify-between flex-wrap  py-2 '>
-        <div id='Brand' className='text-3xl text-black-700'>
-          WDCC Workshop Application
+        <img className = 'logo' src='/images/logo.png' alt="logo"></img>
+        <div id='Brand' className='text-2xl'>
+          UoA Course Catalogue
         </div>
-        <ul className=' flex   '>
-          <MenuItem href='/'>
-              Home
-          </MenuItem>
-          <MenuItem href='/about'>
-              About
-          </MenuItem>
+        {/* <ul className=' flex   '>
           {!loading &&
             (user ? (
               <>
@@ -36,7 +31,7 @@ function Header ({ user, loading }) {
                 Login
               </MenuItem>
             ))}
-        </ul>
+        </ul> */}
       </nav>
 
     </header>

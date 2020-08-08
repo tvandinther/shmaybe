@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Collapsible from 'react-collapsible';
+import { getFacultyFromAcadGroup } from "../tools";
 
 export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) => {
     let [data, setData] = useState([]);
@@ -24,15 +25,19 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
         }).then(response => response.json()).then(data => {
             setData(data);
         });
-    }, [searchValue, stageValue, yearValue]);
+    }, [searchValue, facultyValue, stageValue, yearValue]);
 
     console.log(data);
-    return (
-        <div>
-            {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
-        </div>
-
-    )
+    if (data.length) {
+        return (
+            <div>
+                {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
+            </div>
+        )
+    }
+    else {
+        return <p>No Results</p>
+    }
 }
 
 function CourseItem({ course, expanded, setExpanded }) {
@@ -44,8 +49,9 @@ function CourseItem({ course, expanded, setExpanded }) {
             setExpanded(null)
         }
     }
+    const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
-        <div>
+        <div className={`faculty-${faculty.name}`}>
             <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.title}`}
             </span>
             <span>{`${course.year}`}</span>
