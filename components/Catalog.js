@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 
-export const Catalog = ({ searchValue }) => {
+export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         console.log("Search value: ", searchValue)
+        console.log("faculty value: ", facultyValue)
+        console.log("stage value: ", stageValue)
+        console.log("year value: ", yearValue)  
         const body = {
             text: searchValue,
             size: 20,
+            faculty: facultyValue,
+            level: stageValue,
+            year: yearValue,
         }
         fetch("/api/courses", {
             method: 'POST',
@@ -16,7 +22,7 @@ export const Catalog = ({ searchValue }) => {
         }).then(response => response.json()).then(data => {
             setData(data);
         });
-    }, [searchValue]);
+    }, [searchValue, facultyValue, stageValue, yearValue]);
     
     console.log(data);
     return (

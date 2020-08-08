@@ -18,7 +18,7 @@ function Home () {
   // set required to true to force the page to require login.
   const { user, loading } = useFetchUser({ required: false })
   let [ searchQuery, setSearchQuery ] = useState("")
-  let [filterValue, setFilterOption] = useState("");
+  let [facultyValue, setFacultyOption] = useState("");
   let [stageValue, setStageOption] = useState("");
   let [yearValue, setYearOption] = useState("");
 
@@ -47,9 +47,9 @@ function Home () {
       <h1>Page heading</h1>
       <p>Interesting content here</p>
       <SearchBar setValue={setSearchQuery}></SearchBar>
-      <FilterBar setFilterValue={setFilterOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
+      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
       <p>{searchQuery}</p>
-      <Catalog searchValue={searchQuery}></Catalog>
+      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue}></Catalog>
 
 
 

@@ -1,22 +1,19 @@
 import { useState } from "react";
 
-function FilterBar({setFilterValue, setStageValue ,setYearValue }) {
+function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
 
-  const handleFilterInput = (event) => {
+  const handleFacultyInput = (event) => {
     let input = event.target.value;
-    console.log(input);
-    setFilterValue(input);
+    setFacultyValue(input);
   };
 
   const handleStageInput = (event) => {
     let input = event.target.value;
-    console.log(input);
     setStageValue(input);
   };
 
   const handleYearInput = (event) => {
     let input = event.target.value;
-    console.log(input);
     setYearValue(input);
   };
 
@@ -24,7 +21,7 @@ function FilterBar({setFilterValue, setStageValue ,setYearValue }) {
     <div>
       <span>
         <label>Faculty</label>
-            <select onChange={handleFilterInput}>
+            <select onChange={handleFacultyInput}>
                 <option value="Art">Art</option>
                 <option value="Commerce">Commerce</option>
                 <option value="Engineering">Engineering</option>
