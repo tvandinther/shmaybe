@@ -1,16 +1,13 @@
-function SearchBar() {
+function SearchBar({ setValue }) {
 
-    const getInput = () => {
-        let input = document.getElementById("SearchInput").value;
-    }
-
-    const retrieveResults = () => {
-        
+    const handleInput = (event) => {
+        let input = event.target.value;
+        setValue(input);
     }
 
     return (
         <div>
-            <input id="SearchInput" type="text" placeholder="Enter keyword" onInput={getInput}></input>
+            <input id="SearchInput" type="text" placeholder="Enter keyword" onInput={handleInput}></input>
         </div>
     )
 }

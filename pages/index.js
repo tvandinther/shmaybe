@@ -6,6 +6,7 @@ import ProfileCard from '../components/ProfileCard'
 import Link from 'next/link'
 import SearchBar from '../components/SearchBar'
 import Catalog from '../components/Catalog'
+import { useState } from 'react'
 const LinkA = ({ children, href }) =>
   <Link href={href}>
     <a className='pl-4 block pr-4 underline hover:text-white'>{children}</a>
@@ -14,6 +15,7 @@ const LinkA = ({ children, href }) =>
 function Home () {
   // set required to true to force the page to require login.
   const { user, loading } = useFetchUser({ required: false })
+  let [ searchQuery, setSearchQuery ] = useState("")
 
   const logEvent = async (type, value) => {
     const event = {
@@ -39,8 +41,9 @@ function Home () {
     <Layout user={user} loading={loading}>
       <h1>Page heading</h1>
       <p>Interesting content here</p>
-      <SearchBar></SearchBar>
-      <Catalog></Catalog>
+      <SearchBar setValue={setSearchQuery}></SearchBar>
+      <p>{searchQuery}</p>
+      <Catalog searchValue={searchQuery}></Catalog>
 
 
 

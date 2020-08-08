@@ -1,10 +1,10 @@
 import nextConnect from 'next-connect'
-import {courses} from "../../stubs/courseStub"
+import {courses, course} from "../../stubs/courseStub"
 
 const handler = nextConnect()
 
 handler.post(async (req, res) => {
-	const data = JSON.parse(req.body)
+	//const data = JSON.parse(req.body)
 	/*
 	year:
 	subject:
@@ -15,5 +15,7 @@ handler.post(async (req, res) => {
 	*/
 
 	// STUB
-	return courses
+	res.json(courses)
 })
+
+export default handler

@@ -1,15 +1,29 @@
+import { useEffect, useState } from "react";
 
+export const Catalog = ({ searchValue }) => {
+    const [data, setData] = useState([]);
 
-export const Catalog = ({ data }) => {
-
+    useEffect(() => {
+        fetch("/api/courses", {
+            method: 'POST'
+            
+        }).then(response => response.json()).then(data => {
+            setData(data.data);
+        });
+    }, [searchValue]);
+    
+    console.log(data);
     return (
-        <ul className="list-group">
-            <li className="list-group-item">Cras justo odio</li>
-            <li className="list-group-item">Dapibus ac facilisis in</li>
-            <li className="list-group-item">Morbi leo risus</li>
-            <li className="list-group-item">Porta ac consectetur ac</li>
-            <li className="list-group-item">Vestibulum at eros</li>
-        </ul>
+        <div>
+            {data.map(course => (<div key={course.id}>{course.title}</div>))}
+        </div>
+
+    )
+}
+
+function CourseItem({ course }) {
+    return (
+        <li>{course.name}</li>
     )
 }
 
