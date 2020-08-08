@@ -22,7 +22,7 @@ function SearchBar({ setValue }) {
     return (
         <div>
             <input id="SearchInput" type="text" placeholder="Search" onKeyPress={handleKeypress} onChange={handleInput}></input>
-            <button onClick={handleClick}>Search</button>
+            <button className='btn-blue' onClick={handleClick}>Search</button>
         </div>
     )
 }
