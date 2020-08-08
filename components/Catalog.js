@@ -35,7 +35,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
         )
     }
     else {
-        return null
+        return <p>No Results</p>
     }
 }
 

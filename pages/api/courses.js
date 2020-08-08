@@ -40,11 +40,9 @@ handler.post(async (req, res) => {
 	console.log(url.searchParams)
 
 	try {
-		console.log(url.href)
 		const response = await fetch(url);
 		const responseData = await response.json()
 		res.json(responseData.data)
-		console.log(responseData.data.length)
 	} catch (error) {
 		res.json({message: "error", error: error})
 	}
