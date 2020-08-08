@@ -3,11 +3,24 @@
   margin-bottom: 5px;
 }
 
+.courseItemList.BSCH, .courseItemList.BSC {
+  background-color: blue;
+}
 
+input[type=text] {
+  max-width: 60%;
+  width: 400px;
+  padding: 7px;
+  box-sizing: border-box;
+  border: 2px solid lightslategray;
+  font-size: medium;
+  border-radius: 5px;
+}
 
+/* 
 .searchBar {
 
-}
+} */
 
 /* purgecss start ignore */
 @tailwind base;
@@ -46,9 +59,6 @@ article a {
   @apply bg-red-700 text-white font-bold py-2 px-4 rounded;
 }
 
-.courseItemList.BSCH, .courseItemList.BSC {
-  background-color: blue;
-}
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
