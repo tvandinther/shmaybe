@@ -6,10 +6,6 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
     let [expanded, setExpanded] = useState(null);
 
     useEffect(() => {
-        console.log("Search value: ", searchValue)
-        console.log("faculty value: ", facultyValue)
-        console.log("stage value: ", stageValue)
-        console.log("year value: ", yearValue)
         const body = {
             text: searchValue,
             size: 20,
