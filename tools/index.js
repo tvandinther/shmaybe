@@ -1,4 +1,4 @@
-import { acadGroup } from './data';
+import { acadGroupMap } from './data';
 
 export function getFacultyFromAcadGroup(acadGroup) {
 	return acadGroupMap[acadGroup]
