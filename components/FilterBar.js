@@ -17,6 +17,17 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
     setYearValue(input);
   };
 
+  const yearOptions = (() => {
+    const yearsShown = 3
+    let currentYear = new Date().getFullYear()
+    let yearOptionComponents = []
+    for (let i = 0; i < yearsShown; i++) {
+      let year = currentYear + i
+      yearOptionComponents.push(<option key={year} value={year}>{year}</option>)
+    }
+    return yearOptionComponents
+  })()
+
   return (
     <div>
       <span>
@@ -32,15 +43,11 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="7">7</option>
             </select>
         <label>Year</label>
             <select onChange={handleYearInput}>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
+                {yearOptions}
             </select>
       </span>
     </div>
