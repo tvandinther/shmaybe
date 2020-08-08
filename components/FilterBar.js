@@ -37,7 +37,7 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
       <span>
         <label>Faculty</label>
             <select onChange={handleFacultyInput}>
-              {faculties.map(faculty => <option className={`faculty-${faculty.name}`} value={faculty.id}>{faculty.title}</option>)}
+              {faculties.map(faculty => <option key={faculty.id} className={`faculty-${faculty.name}`} value={faculty.id}>{faculty.title}</option>)}
             </select>
         <label>Stage</label>
             <select onChange={handleStageInput}>

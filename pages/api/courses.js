@@ -23,23 +23,28 @@ handler.post(async (req, res) => {
 	let url = new URL("https://api.test.auckland.ac.nz/service/courses/v2/courses")
 	
 	let params = {
-		year: data.year,
+		year: Number(data.year || new Date().getFullYear),
 		subject: data.subject,
-		acadOrg: data.faculty,
-		level: data.level,
+		acadGroup: data.faculty,
+		level: Number(data.level) || null,
 		text: data.text,
-		size: data.size
+		from: Number(data.from) || 0,
+		size: Number(data.size) || 20
 	}
 
 	// Add params to URL object
 	Object.entries(params).forEach(([ key, value ]) => {
-		if (value !== undefined) url.searchParams.append(key, value)
+		if (value === false || Boolean(value)) url.searchParams.append(key, value)
 	})
 
+	console.log(url.searchParams)
+
 	try {
+		console.log(url.href)
 		const response = await fetch(url);
 		const responseData = await response.json()
 		res.json(responseData.data)
+		console.log(responseData.data.length)
 	} catch (error) {
 		res.json({message: "error", error: error})
 	}
