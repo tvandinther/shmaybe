@@ -11,8 +11,8 @@ function Header ({ user, loading }) {
   return (
     <header className='bg-blue-300'>
       <nav className='container flex items-center justify-between flex-wrap  py-2 '>
-        <img src='/images/logo.png' alt="logo"></img>
-        <div id='Brand' className='text-3xl text-black-700'>
+        <img className = 'logo' src='/images/logo.png' alt="logo"></img>
+        <div id='Brand' className='text-2xl'>
           UoA Course Catalogue
         </div>
         {/* <ul className=' flex   '>
