@@ -3,9 +3,7 @@
   margin-bottom: 5px;
 }
 
-.courseItemList.BSCH, .courseItemList.BSC {
-  background-color: blue;
-}
+
 
 /* input[type=text] {
   max-width: 60%;
@@ -15,11 +13,6 @@
   border: 2px solid lightslategray;
   font-size: medium;
   border-radius: 5px;
-} */
-
-/* 
-.searchBar {
-
 } */
 
 /* purgecss start ignore */
@@ -61,6 +54,14 @@ article a {
 
 input {
   @apply w-3/4 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-600;
+}
+
+.courseItemList.BSCH, .courseItemList.BSC {
+  @apply bg-blue-200;
+}
+
+.courseItemList.BSCH:hover, .courseItemList.BSC:hover {
+  @apply bg-blue-300;
 }
 
 @tailwind components;
