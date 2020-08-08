@@ -46,7 +46,7 @@ function CourseItem({ course, expanded, setExpanded }) {
     }
     const title = (
         <div>
-            <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.title}`}
+            <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
             </span>
             <span>{`${course.year}`}</span>
         </div>

@@ -44,8 +44,6 @@ function Home () {
   }
   return (
     <Layout user={user} loading={loading}>
-      <h1>Page heading</h1>
-      <p>Interesting content here</p>
       <SearchBar setValue={setSearchQuery}></SearchBar>
       <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
       <p>{searchQuery}</p>
