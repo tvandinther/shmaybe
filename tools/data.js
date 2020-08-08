@@ -1,4 +1,4 @@
-export const acadGroup = {
+export const acadGroupMap = {
 	"1000": {
 		id: "1000",
 		name: "creative",

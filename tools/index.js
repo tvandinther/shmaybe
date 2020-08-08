@@ -1,9 +1,9 @@
-import { acadGroup } from './data';
+import { acadGroupMap } from './data';
 
 export function getFacultyFromAcadGroup(acadGroup) {
 	return acadGroupMap[acadGroup]
 }
 
 export function getAllFaculties() {
-	return Object.values(acadGroup)
+	return Object.values(acadGroupMap)
 }
