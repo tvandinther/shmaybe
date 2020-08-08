@@ -7,6 +7,7 @@ export const Catalog = ({ searchValue }) => {
         console.log("Search value: ", searchValue)
         const body = {
             text: searchValue,
+            size: 20,
         }
         fetch("/api/courses", {
             method: 'POST',
@@ -27,9 +28,11 @@ export const Catalog = ({ searchValue }) => {
 }
 
 function CourseItem({ course }) {
-    const title = course.subject + " " + course.catalogNbr + ": " + course.title;
+    const title = `${course.subject} ${course.catalogNbr}: ${course.title}`;
     return (
-        <div key={course.id}>{title}</div>
+        <a href={`/course/${course.crseId}`}>
+            <div key={course.id} className={`courseItemList ${course.mainProgram}`}>{title}</div>
+        </a>
     )
 }
 

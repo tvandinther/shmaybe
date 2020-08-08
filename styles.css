@@ -1,3 +1,12 @@
+.courseItemList {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.courseItemList.BSCH {
+  background-color: blue;
+}
+
 /* purgecss start ignore */
 @tailwind base;
 h1 {
