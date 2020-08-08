@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import logo from "../public/logo.png";
 
 const MenuItem = ({ children, href }) =>
   <Link href={href}>
@@ -12,7 +11,7 @@ function Header ({ user, loading }) {
   return (
     <header className='bg-blue-300'>
       <nav className='container flex items-center justify-between flex-wrap  py-2 '>
-        <img src={logo} alt="logo"></img>
+        <img src='/images/logo.png' alt="logo"></img>
         <div id='Brand' className='text-3xl text-black-700'>
           UoA Course Catalogue
         </div>
