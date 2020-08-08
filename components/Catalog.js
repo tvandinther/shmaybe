@@ -6,7 +6,7 @@ export const Catalog = ({ searchValue }) => {
     useEffect(() => {
         fetch("/api/courses", {
             method: 'POST'
-            
+
         }).then(response => response.json()).then(data => {
             setData(data.data);
         });
@@ -15,15 +15,16 @@ export const Catalog = ({ searchValue }) => {
     console.log(data);
     return (
         <div>
-            {data.map(course => (<div key={course.id}>{course.title}</div>))}
+            {data.map(course => (<CourseItem course={course}/>))}
         </div>
 
     )
 }
 
 function CourseItem({ course }) {
+    const title = course.subject + " " + course.catalogNbr + ": " + course.title;
     return (
-        <li>{course.name}</li>
+        <div key={course.id}>{title}</div>
     )
 }
 
