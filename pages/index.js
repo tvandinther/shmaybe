@@ -4,6 +4,8 @@ import { useFetchUser } from '../lib/user'
 import config from '../lib/config'
 import ProfileCard from '../components/ProfileCard'
 import Link from 'next/link'
+import SearchBar from '../components/SearchBar'
+import Catalog from '../components/Catalog'
 const LinkA = ({ children, href }) =>
   <Link href={href}>
     <a className='pl-4 block pr-4 underline hover:text-white'>{children}</a>
@@ -37,8 +39,13 @@ function Home () {
     <Layout user={user} loading={loading}>
       <h1>Page heading</h1>
       <p>Interesting content here</p>
+      <SearchBar></SearchBar>
+      <Catalog></Catalog>
 
-      {loading && <p>Loading login info...</p>}
+
+
+
+      {/* {loading && <p>Loading login info...</p>}
       {!loading && !user && (
         <>
           <p>
@@ -56,7 +63,7 @@ function Home () {
           <LinkA href='/reportSSR'>Report - SSR</LinkA>
           <LinkA href='/reportSWR'>Report - SWR</LinkA>
 
-        </>)}
+        </>)} */}
     </Layout>
   )
 }
