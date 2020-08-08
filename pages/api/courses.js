@@ -3,6 +3,15 @@ import { courses } from "../../stubs/courseStub"
 
 const handler = nextConnect()
 
+/*
+	Expected body parameters:
+		year?: string
+		subject?: string
+		faculty?: string
+		level?: string
+		text?: string
+		size?: string
+*/
 handler.post(async (req, res) => {
 	let data
 	if (req.body) {
@@ -11,20 +20,9 @@ handler.post(async (req, res) => {
 	else {
 		data = {}
 	}
-	/*
-	year:
-	subject:
-	faculty:
-	level:
-	text:
-	size:
-	*/
-
-	// return courses
-
-	res.json(courses.data)
 
 	let url = new URL("https://api.test.auckland.ac.nz/service/courses/v2/courses")
+	
 	let params = {
 		year: data.year,
 		subject: data.subject,
@@ -36,14 +34,23 @@ handler.post(async (req, res) => {
 
 	// Add params to URL object
 	Object.entries(params).forEach(([ key, value ]) => {
-		url.searchParams.append(key, value)
+		if (value !== undefined) url.searchParams.append(key, value)
 	})
 
-	fetch(url).then(resp => {
-		if (resp.data) res.json(resp.data)
-	}).catch(err => {
-		res.send(err)
-	})
+	try {
+		const response = await fetch(url);
+		const responseData = await response.json()
+		res.json(responseData.data)
+	} catch (error) {
+		res.json({message: "error", error: error})
+	}
+
+	// fetch(url).then(resp => {
+	// 	if (resp.size > 0) res.json(resp.data)
+	// 	else res.json(resp)
+	// }).catch(err => {
+	// 	res.json(err)
+	// })
 
 })
 
