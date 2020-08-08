@@ -1,5 +1,4 @@
 import nextConnect from 'next-connect'
-import { courses } from "../../stubs/courseStub"
 
 const handler = nextConnect()
 
