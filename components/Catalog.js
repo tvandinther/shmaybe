@@ -8,7 +8,7 @@ export const Catalog = ({ searchValue }) => {
             method: 'POST'
 
         }).then(response => response.json()).then(data => {
-            setData(data.data);
+            setData(data);
         });
     }, [searchValue]);
     
