@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { faculties } from "../tools/index.js";
+import { getAllFaculties } from '../tools/index';
 
 function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
 
@@ -17,15 +19,15 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
     setYearValue(input);
   };
 
+  const faculties = getAllFaculties();
+  console.log(faculties);
+
   return (
     <div>
       <span>
         <label>Faculty</label>
             <select onChange={handleFacultyInput}>
-                <option value="Art">Art</option>
-                <option value="Commerce">Commerce</option>
-                <option value="Engineering">Engineering</option>
-                <option value="Law">Law</option>
+              {faculties.map(faculty => <option className={`faculty-${faculty.name}`} value={faculty.id}>{faculty.title}</option>)}
             </select>
         <label>Stage</label>
             <select onChange={handleStageInput}>
@@ -33,6 +35,7 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="4">7</option>
             </select>
         <label>Year</label>
             <select onChange={handleYearInput}>
