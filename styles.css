@@ -43,6 +43,19 @@ article a {
 .panel-error {
   @apply bg-red-700 text-white font-bold py-2 px-4 rounded;
 }
+
+input {
+  @apply w-3/4 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-600;
+}
+
+.courseItemList.BSCH, .courseItemList.BSC {
+  @apply bg-blue-200;
+}
+
+.courseItemList.BSCH:hover, .courseItemList.BSC:hover {
+  @apply bg-blue-300;
+}
+
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
