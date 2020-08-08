@@ -7,6 +7,9 @@ function SearchBar({ setValue }) {
     const handleInput = (event) => {
         let input = event.target.value;
         setInputValue(input);
+    }
+
+    const handleKeypress = event => {
         if (event.key === 'Enter') {
             setValue(inputValue);
         }
@@ -18,7 +21,7 @@ function SearchBar({ setValue }) {
 
     return (
         <div>
-            <input id="SearchInput" type="text" placeholder="Search" onKeyPress={handleInput}></input>
+            <input id="SearchInput" type="text" placeholder="Search" onKeyPress={handleKeypress} onChange={handleInput}></input>
             <button onClick={handleClick}>Search</button>
         </div>
     )
