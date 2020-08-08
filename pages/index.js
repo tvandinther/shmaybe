@@ -7,6 +7,8 @@ import Link from 'next/link'
 import SearchBar from '../components/SearchBar'
 import Catalog from '../components/Catalog'
 import { useState } from 'react'
+import FilterBar from '../components/FilterBar'
+
 const LinkA = ({ children, href }) =>
   <Link href={href}>
     <a className='pl-4 block pr-4 underline hover:text-white'>{children}</a>
@@ -16,6 +18,9 @@ function Home () {
   // set required to true to force the page to require login.
   const { user, loading } = useFetchUser({ required: false })
   let [ searchQuery, setSearchQuery ] = useState("")
+  let [filterValue, setFilterOption] = useState("");
+  let [stageValue, setStageOption] = useState("");
+  let [yearValue, setYearOption] = useState("");
 
   const logEvent = async (type, value) => {
     const event = {
@@ -42,6 +47,7 @@ function Home () {
       <h1>Page heading</h1>
       <p>Interesting content here</p>
       <SearchBar setValue={setSearchQuery}></SearchBar>
+      <FilterBar setFilterValue={setFilterOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
       <p>{searchQuery}</p>
       <Catalog searchValue={searchQuery}></Catalog>
 
