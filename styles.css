@@ -48,12 +48,16 @@ input {
   @apply rounded py-2 px-4;
 }
 
-.courseItemList.BSCH, .courseItemList.BSC {
-  @apply bg-blue-200;
-}
+/* .courseItemList.BSCH, .courseItemList.BSC {
+  
+} */
 
 .courseItemList.BSCH:hover, .courseItemList.BSC:hover {
   @apply bg-blue-300;
+}
+
+.faculty-science {
+  @apply bg-blue-200;
 }
 
 select {
