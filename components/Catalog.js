@@ -4,8 +4,13 @@ export const Catalog = ({ searchValue }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
+        console.log("Search value: ", searchValue)
+        const body = {
+            text: searchValue,
+        }
         fetch("/api/courses", {
-            method: 'POST'
+            method: 'POST',
+            body: JSON.stringify(body),
 
         }).then(response => response.json()).then(data => {
             setData(data);
@@ -15,7 +20,7 @@ export const Catalog = ({ searchValue }) => {
     console.log(data);
     return (
         <div>
-            {data.map(course => (<CourseItem course={course}/>))}
+            {data.map(course => (<CourseItem course={course} key={course.id}/>))}
         </div>
 
     )
