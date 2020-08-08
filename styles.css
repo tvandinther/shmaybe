@@ -1,6 +1,5 @@
 .courseItemList {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 /* purgecss start ignore */
@@ -44,20 +43,16 @@ input {
   @apply flex-1 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
-.courseItemList {
+.faculty {
   @apply rounded py-2 px-4;
-}
-
-/* .courseItemList.BSCH, .courseItemList.BSC {
-  
-} */
-
-.courseItemList.BSCH:hover, .courseItemList.BSC:hover {
-  @apply bg-blue-300;
 }
 
 .faculty-science {
   @apply bg-blue-200;
+}
+
+.faculty-science:hover {
+  @apply bg-blue-300;
 }
 
 select {
