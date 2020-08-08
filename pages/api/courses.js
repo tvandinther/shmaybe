@@ -1,5 +1,5 @@
 import nextConnect from 'next-connect'
-import {courses} from "../../stubs/courseStub"
+import { courses } from "../../stubs/courseStub"
 
 const handler = nextConnect()
 
@@ -15,5 +15,7 @@ handler.post(async (req, res) => {
 	*/
 
 	// STUB
-	return courses
+	res.json(courses.data)
 })
+
+export default handler
