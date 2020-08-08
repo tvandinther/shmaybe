@@ -9,6 +9,7 @@ handler.post(async (req, res) => {
 	course id
 	*/
 
-	// STUB
-	return course
+	let url = new URL("https://api.test.auckland.ac.nz/service/courses/v2/course/" + req.body.id)
+
+	return await fetch(url)
 })
