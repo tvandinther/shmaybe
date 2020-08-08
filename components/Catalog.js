@@ -24,15 +24,19 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
         }).then(response => response.json()).then(data => {
             setData(data);
         });
-    }, [searchValue, stageValue, yearValue]);
+    }, [searchValue, facultyValue, stageValue, yearValue]);
 
     console.log(data);
-    return (
-        <div>
-            {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
-        </div>
-
-    )
+    if (data.length) {
+        return (
+            <div>
+                {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
+            </div>
+        )
+    }
+    else {
+        return <p>No Results</p>
+    }
 }
 
 function CourseItem({ course, expanded, setExpanded }) {

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { faculties } from "../tools/index.js";
+import { getAllFaculties } from '../tools/index';
 
 function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
 
@@ -17,30 +19,39 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
     setYearValue(input);
   };
 
+  const faculties = getAllFaculties();
+
+  const yearOptions = (() => {
+    const yearsShown = 3
+    let currentYear = new Date().getFullYear()
+    let yearOptionComponents = []
+    for (let i = 0; i < yearsShown; i++) {
+      let year = currentYear + i
+      yearOptionComponents.push(<option key={year} value={year}>{year}</option>)
+    }
+    return yearOptionComponents
+  })()
+
   return (
     <div>
       <span>
         <label>Faculty</label>
             <select onChange={handleFacultyInput}>
-                <option value="Art">Art</option>
-                <option value="Commerce">Commerce</option>
-                <option value="Engineering">Engineering</option>
-                <option value="Law">Law</option>
+              <option value="">All</option>
+              {faculties.map(faculty => <option key={faculty.id} className={`faculty-${faculty.name}`} value={faculty.id}>{faculty.title}</option>)}
             </select>
         <label>Stage</label>
             <select onChange={handleStageInput}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+              <option value="">All</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="4">7</option>
             </select>
         <label>Year</label>
             <select onChange={handleYearInput}>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
+                {yearOptions}
             </select>
       </span>
     </div>
