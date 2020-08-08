@@ -23,7 +23,7 @@ function Home () {
   let [yearValue, setYearOption] = useState("");
 
   return (
-    <Layout user={user} loading={loading}>
+    <Layout>
       <SearchBar setValue={setSearchQuery}></SearchBar>
       <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
       <p>{searchQuery}</p>
