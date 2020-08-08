@@ -21,7 +21,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
         }).then(response => response.json()).then(data => {
             setData(data);
         });
-    }, [searchValue, facultyValue, stageValue, yearValue]);
+    }, [searchValue, stageValue, yearValue]);
     
     console.log(data);
     return (
