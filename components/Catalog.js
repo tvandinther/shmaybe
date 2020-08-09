@@ -51,7 +51,7 @@ function CourseItem({ course, expanded, setExpanded }) {
     }
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
-        <div className={`faculty-${faculty.name}`}>
+        <div className={`faculty faculty-${faculty.name}`}>
             <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.title}`}
             </span>
             <span>{`${course.year}`}</span>
@@ -60,12 +60,16 @@ function CourseItem({ course, expanded, setExpanded }) {
     const preReq = `${course.rqrmntDescr}`.replace("Prerequisite:", "");
 
     return (
-        <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id}>
-            {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
-            <b>Description:</b>
-            {course.description && <p>{course.description}</p>}
-            <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
-        </Collapsible>
+        <div className={`courseList-${faculty.name}`}>
+            <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id}>
+                <div className={`courseDescription courseDescription-${faculty.name}`}>
+                    {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
+                    <b>Description:</b>
+                    {course.description && <p>{course.description}</p>}
+                    <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
+                </div>
+            </Collapsible>
+        </div>
     )
 }
 

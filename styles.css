@@ -1,6 +1,11 @@
-.courseItemList {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.logo {
+  width: 20%;
+}
+
+#Brand {
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
 }
 
 /* purgecss start ignore */
@@ -44,14 +49,9 @@ input {
   @apply flex-1 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
-.courseItemList {
-  @apply rounded py-2 px-4;
+.faculty {
+  @apply rounded py-2 px-4 cursor-pointer;
 }
-
-/* .courseItemList.BSCH, .courseItemList.BSC {
-  
-} */
-
 
 .faculty-science {
   background-color: #9EB0D1;
@@ -134,12 +134,24 @@ input {
 
 }
 
+.faculty-science:hover {
+  @apply bg-blue-300;
+}
+
 select {
   @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 label {
   @apply py-2;
+}
+
+.courseDescription {
+  @apply py-2 px-4;
+}
+
+.courseList-science {
+  @apply bg-blue-100 mb-3 rounded-b;
 }
 
 @tailwind components;

@@ -1,16 +1,16 @@
 import Link from 'next/link';
 
-const MenuItem = ({ children, href }) =>
-  <Link href={href}>
-    <li className='block mt-4 inline-block  rounded-md text-center bg-orange-200 hover:bg-orange-500 px-4 py-2 m-2 lg:mt-0 hover:text-white mr-4'>
-      <a className='no-underline hover:text-white'>{children}</a>
-    </li>
-  </Link>
+// const MenuItem = ({ children, href }) =>
+//   <Link href={href}>
+//     <li className='block mt-4 inline-block  rounded-md text-center bg-orange-200 hover:bg-orange-500 px-4 py-2 m-2 lg:mt-0 hover:text-white mr-4'>
+//       <a className='no-underline hover:text-white'>{children}</a>
+//     </li>
+//   </Link>
 
 function Header ({ user, loading }) {
   return (
-    <header className='bg-blue-300'>
-      <nav className='container flex items-center justify-between flex-wrap  py-2 '>
+    <header className='bg-UoA'>
+      <nav className='container flex items-center flex-wrap  py-2 '>
         <img className = 'logo' src='/images/logo.png' alt="logo"></img>
         <div id='Brand' className='text-2xl'>
           UoA Course Catalogue
