@@ -40,7 +40,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
             let allResults = mergeCourseResults(subjectResults.data, descResults.data)
             console.log(allResults)
             setLoading(false)
-            setTotalResults(descResults.total + subjectResults.total)
+            setTotalResults(Math.max(descResults.total + subjectResults.total))
             setData(allResults)
         })
     }, [searchValue, facultyValue, stageValue, yearValue, sizeValue, resultsFrom]);
@@ -61,18 +61,18 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
 }
 
 function CourseItem({ course, expanded, setExpanded }) {
-    const handleClick = () => {
-        if (expanded != course.id) {
-            setExpanded(course.id)
-        }
-        else {
-            setExpanded(null)
-        }
+    const handleOpening = () =>{
+        setExpanded (course.id);
     }
+
+    const handleClosing =()=>{
+        setExpanded(null);
+    }
+
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
-        <div>
-            <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
+        <div className={`faculty-${faculty.name}`}>
+            <span >{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
             </span>
             <span style={{float: "right"}}>{`${course.year}`}</span>
         </div>
@@ -80,7 +80,7 @@ function CourseItem({ course, expanded, setExpanded }) {
     const preReq = `${course.rqrmntDescr}`.replace("Prerequisite:", "");
 
     return (
-        <Collapsible key={course.id} className={`courseItemList faculty-${faculty.name}`} trigger={title} open={expanded == course.id}>
+        <Collapsible key={course.id} className={`courseItemList faculty-${faculty.name}`} trigger={title} open={expanded == course.id} onTriggerOpening={handleOpening} onTriggerClosing={handleClosing}>
             <div className={`courseDescription courseDescription-${faculty.name}`}>
                 {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
                 <b>Description:</b>
