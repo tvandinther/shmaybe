@@ -60,14 +60,16 @@ function CourseItem({ course, expanded, setExpanded }) {
     const preReq = `${course.rqrmntDescr}`.replace("Prerequisite:", "");
 
     return (
-        <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id}>
-            <div className={`courseDescription courseDescription-${faculty.name}`}>
-                {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
-                <b>Description:</b>
-                {course.description && <p>{course.description}</p>}
-                <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
-            </div>
-        </Collapsible>
+        <div className={`courseList-${faculty.name}`}>
+            <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id}>
+                <div className={`courseDescription courseDescription-${faculty.name}`}>
+                    {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
+                    <b>Description:</b>
+                    {course.description && <p>{course.description}</p>}
+                    <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
+                </div>
+            </Collapsible>
+        </div>
     )
 }
 
