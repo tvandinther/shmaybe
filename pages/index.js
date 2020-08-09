@@ -21,13 +21,14 @@ function Home () {
   let [facultyValue, setFacultyOption] = useState("");
   let [stageValue, setStageOption] = useState("");
   let [yearValue, setYearOption] = useState("");
+  let [sizeValue, setSizeValue] = useState("");
 
   return (
     <Layout>
       <SearchBar setValue={setSearchQuery}></SearchBar>
-      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
+      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption} setSizeValue={setSizeValue}></FilterBar>
       <p>{searchQuery}</p>
-      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue}></Catalog>
+      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue} sizeValue={sizeValue}></Catalog>
 
 
 

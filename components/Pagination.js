@@ -14,7 +14,7 @@ export default function Pagination(props) {
 	return (
 		<div>
 			<button onClick={handlePrev}>⤌</button>
-				<span>Showing results {from + 1}-{from + results + 1} of {total}</span>
+				<span>Showing results {from + 1}-{from + results} of {total}</span>
 			<button onClick={handleNext}>⤍</button>
 		</div>
 	)

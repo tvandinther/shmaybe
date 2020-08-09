@@ -4,7 +4,7 @@ import { getFacultyFromAcadGroup } from "../tools";
 import Pagination from "./Pagination";
 import Spinner from "./Spinner"
 
-export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) => {
+export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, sizeValue }) => {
     let [data, setData] = useState([]);
     let [ totalResults, setTotalResults ] = useState(0);
     let [ resultsFrom, setResultsFrom ] = useState(0);
@@ -18,7 +18,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
         console.log("year value: ", yearValue)
         const body = {
             text: searchValue,
-            size: 10,
+            size: sizeValue,
             faculty: facultyValue,
             level: stageValue,
             year: yearValue,
@@ -35,7 +35,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
             setLoading(false);
             setTotalResults(data.total);
         });
-    }, [searchValue, facultyValue, stageValue, yearValue, resultsFrom]);
+    }, [searchValue, facultyValue, stageValue, yearValue, sizeValue, resultsFrom]);
 
     console.log(data);
     if (data.length) {
