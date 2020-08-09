@@ -70,7 +70,7 @@ input {
   background-color: #B57CAA
 }
 
-.courseDescription-business {
+.courseList-business {
   background-color: #F2ECEF;
 }
 .faculty-arts {
@@ -81,7 +81,7 @@ input {
   background-color: #CF9EA6;
 }
 
-.courseDescription-arts {
+.courseList-arts {
   background-color: #E7DFDC;
 }
 
@@ -94,7 +94,7 @@ input {
   background-color: #D99A8C;
 }
 
-.courseDescription-creative {
+.courseList-creative {
   background-color: #E9E0D9;
 }
 .faculty-engineering {
@@ -106,7 +106,7 @@ input {
   background-color: #AEA2C0;
 }
 
-.courseDescription-engineering {
+.courseList-engineering {
   background-color: #D7D4DC;
 }
 
@@ -119,7 +119,7 @@ input {
   background-color: #91B3C1;
 }
 
-.courseDescription-law {
+.courseList-law {
   background-color: #D7E2E2;
 }
 
@@ -144,7 +144,7 @@ input {
   background-color: #9FBB8C;
 }
 
-.courseDescription-educaton {
+.courseList-educaton {
   background-color: #E6EBDF;
 }
 
@@ -161,7 +161,7 @@ input {
   background-color: #7291AA;
 }
 
-.courseDescription-uoa {
+.courseList-uoa {
   background-color: #D6DEDF;
 }
 
@@ -173,7 +173,7 @@ input {
    background-color: #F1F1F1;
 }
 
-.courseDescription-bioengineering {
+.courseList-bioengineering {
   background-color: #F1F1F1;
 }
 
@@ -185,7 +185,7 @@ input {
    background-color: #F1F1F1;
 }
 
-.courseDescription-liggins {
+.courseList-liggins {
   background-color: #F1F1F1;
 }
 
@@ -197,7 +197,7 @@ input {
    background-color: #F1F1F1;
 }
 
-.courseDescription-continuingEd {
+.courseList-continuingEd {
   background-color: #F1F1F1;
 }
 
@@ -210,7 +210,7 @@ input {
    background-color: #F1F1F1;
 }
 
-.courseDescription-newStart {
+.courseList-newStart {
   background-color: #F1F1F1;
 }
 
