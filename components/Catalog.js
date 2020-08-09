@@ -40,7 +40,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
             let allResults = mergeCourseResults(subjectResults.data, descResults.data)
             console.log(allResults)
             setLoading(false)
-            setTotalResults(descResults.total + subjectResults.total)
+            setTotalResults(Math.max(descResults.total + subjectResults.total))
             setData(allResults)
         })
     }, [searchValue, facultyValue, stageValue, yearValue, sizeValue, resultsFrom]);
