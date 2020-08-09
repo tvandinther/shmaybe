@@ -19,7 +19,7 @@ export function getAllFaculties() {
 export function mergeCourseResults(result1, result2) {
 	let result = []
 	let idsSeen = {}
-	console.log(result1)
+
 	result1.forEach(course => {
 		idsSeen[course.id] = true;
 		result.push(course);

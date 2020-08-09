@@ -44,7 +44,6 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
         })
     }, [searchValue, facultyValue, stageValue, yearValue, sizeValue, resultsFrom]);
 
-    console.log(data);
     if (data.length) {
         return (
             <div>
@@ -71,9 +70,9 @@ function CourseItem({ course, expanded, setExpanded }) {
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
         <div className={`faculty faculty-${faculty.name}`}>
-            <span>{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
-            </span>
-            <span style={{ float: "right" }}>{`${course.year}`}</span>
+            <div className="tab"></div>
+            <span>{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}</span>
+            <span style={{ position: "absolute", right: "10px" }}>{`${course.year}`}</span>
         </div>
     )
     const preReq = `${course.rqrmntDescr}`.replace("Prerequisite:", "");
@@ -85,7 +84,8 @@ function CourseItem({ course, expanded, setExpanded }) {
                     {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
                     <b>Description:</b>
                     {course.description && <p>{course.description}</p>}
-                    <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
+                    <br/>
+                    <a className="fullDescBtn btn-blue bg-UoA" href={`/course/${course.crseId}`}>View Course Details</a>
                 </div>
             </Collapsible>
         </div>

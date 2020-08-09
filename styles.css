@@ -8,6 +8,11 @@
   color: white;
 }
 
+.faculty>.tab {
+  width: 10px;
+  margin-right: 10px;
+}
+
 .filterBar {
   display: flex;
   justify-content: space-between;
@@ -58,11 +63,17 @@ input {
   @apply flex-1 rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
-.faculty {
-  @apply rounded py-2 px-4 cursor-pointer;
+.fullDescBtn {
+
 }
 
-.faculty-science {
+.faculty {
+  @apply rounded py-2 px-4 cursor-pointer;
+  display: flex;
+  position: relative;
+}
+
+.faculty-science>.tab {
   background-color: #9EB0D1;
 }
 
@@ -70,7 +81,7 @@ input {
    background-color: #577ABE;
 }
 
-.faculty-business {
+.faculty-business>.tab {
   background-color: #C197B9;
 }
 
@@ -78,7 +89,7 @@ input {
   background-color: #B57CAA
 }
 
-.faculty-arts {
+.faculty-arts>.tab {
   background-color: #D3A8AF;
 }
 
@@ -86,7 +97,7 @@ input {
   background-color: #CF9EA6;
 }
 
-.faculty-creative {
+.faculty-creative>.tab {
   background-color: #DBA396;
 }
 
@@ -94,7 +105,7 @@ input {
   background-color: #D99A8C;
 }
 
-.faculty-engineering {
+.faculty-engineering>.tab {
   background-color: #B4A9C4;
 }
 
@@ -102,7 +113,7 @@ input {
   background-color: #AEA2C0;
 }
 
-.faculty-law {
+.faculty-law>.tab {
   background-color: #9EBAC6;
 }
 
@@ -111,7 +122,7 @@ input {
 }
 
 
-.faculty-medical {
+.faculty-medical>.tab {
   background-color: #8EBFBA;
 }
 
@@ -120,7 +131,7 @@ input {
 
 }
 
-.faculty-education {
+.faculty-education>.tab {
   background-color: #AAC29A;
 }
 
@@ -150,6 +161,8 @@ label {
 
 .courseList {
   @apply mb-3 rounded-b;
+  border-width: 2px;
+  border-radius: 5px;
 }
 
 @tailwind components;
