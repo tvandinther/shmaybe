@@ -12,8 +12,8 @@
   color: white;
 }
 
-#SearchInput {
-  
+.fixedWidth {
+  width: 100px;
 }
 
 /* purgecss start ignore */

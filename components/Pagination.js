@@ -13,9 +13,9 @@ export default function Pagination(props) {
 
 	return (
 		<div>
-			<button onClick={handlePrev}>⤌</button>
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 border border-blue-700 rounded m-2" onClick={handlePrev}>⤌</button>
 				<span>Showing results {from + 1}-{from + results} of {total}</span>
-			<button onClick={handleNext}>⤍</button>
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 border border-blue-700 rounded m-2" onClick={handleNext}>⤍</button>
 		</div>
 	)
 }
