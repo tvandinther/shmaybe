@@ -159,6 +159,28 @@ label {
   @apply bg-blue-100;
 }
 
+.spinner {
+  margin: auto;
+  width: fit-content;
+}
+
+.courseDetails h1{
+  text-align: center;
+}
+
+.courseDetails div{
+  @apply rounded-lg;
+}
+
+.courseDetailsHeading{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.margin-top{
+  margin-top: 10px;
+}
+
 .courseList {
   @apply mb-3 rounded-b;
   border-width: 2px;

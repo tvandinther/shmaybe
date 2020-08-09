@@ -29,13 +29,13 @@ export default function t() {
 		return (
 			<Layout>
 				<article>
-					<button onClick={() => router.back()}>Back</button>
-					<h1>Course Details</h1>
+					<button onClick={() => router.back()} className="btn-blue bg-UoA margin-top">Back</button>
+					<h1 className="courseDetailsHeading">Course Details</h1>
 					<CourseDetailsPage course={course} />
 				</article>
 			</Layout>
 		)
 	} else {
-		return <Spinner />
+		return <Layout> <Spinner  className='spinner'/> </Layout>
 	}
 }
