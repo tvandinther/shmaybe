@@ -73,7 +73,7 @@ input {
   position: relative;
 }
 
-.faculty-science>.tab {
+.colour.faculty-science {
   background-color: #9EB0D1;
 }
 
@@ -81,7 +81,7 @@ input {
    background-color: #577ABE;
 }
 
-.faculty-business>.tab {
+.colour.faculty-business {
   background-color: #C197B9;
 }
 
@@ -89,7 +89,7 @@ input {
   background-color: #B57CAA
 }
 
-.faculty-arts>.tab {
+.colour.faculty-arts {
   background-color: #D3A8AF;
 }
 
@@ -97,7 +97,7 @@ input {
   background-color: #CF9EA6;
 }
 
-.faculty-creative>.tab {
+.colour.faculty-creative {
   background-color: #DBA396;
 }
 
@@ -105,7 +105,7 @@ input {
   background-color: #D99A8C;
 }
 
-.faculty-engineering>.tab {
+.colour.faculty-engineering {
   background-color: #B4A9C4;
 }
 
@@ -113,7 +113,7 @@ input {
   background-color: #AEA2C0;
 }
 
-.faculty-law>.tab {
+.colour.faculty-law {
   background-color: #9EBAC6;
 }
 
@@ -121,17 +121,15 @@ input {
   background-color: #91B3C1;
 }
 
-
-.faculty-medical>.tab {
+.colour.faculty-medical {
   background-color: #8EBFBA;
 }
 
 .faculty-medical:hover {
   background-color: #85BBB6;
-
 }
 
-.faculty-education>.tab {
+.colour.faculty-education {
   background-color: #AAC29A;
 }
 

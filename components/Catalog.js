@@ -70,7 +70,7 @@ function CourseItem({ course, expanded, setExpanded }) {
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
         <div className={`faculty faculty-${faculty.name}`}>
-            <div className="tab"></div>
+            <div className={`tab colour faculty-${faculty.name}`}></div>
             <span>{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}</span>
             <span style={{ position: "absolute", right: "10px" }}>{`${course.year}`}</span>
         </div>

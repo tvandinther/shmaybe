@@ -8,7 +8,7 @@ export const CourseDetailsPage = ({ course }) => {
 
     return (
         <div className="courseDetails">
-            <div className={`faculty-${acadGroup.name}`}>
+            <div className={`colour faculty-${acadGroup.name}`}>
                 <h1 >{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}</h1>
             </div>
             <hr />
