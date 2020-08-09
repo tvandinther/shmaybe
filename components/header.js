@@ -11,8 +11,8 @@ function Header({ user, loading }) {
   return (
     <header className='bg-UoA'>
       <nav className='container flex items-center flex-wrap  py-2 '>
-        <a href='/'>
-          <img className='logo' src='/images/logo.png' alt="logo"></img>
+        <a className='logo' href='/'>
+          <img src='/images/logo.png' alt="logo"></img>
         </a>
         <div id='Brand' className='text-2xl'>
           UoA Course Catalogue
