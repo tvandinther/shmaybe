@@ -1,5 +1,5 @@
 
-import { useRouter } from 'next/router'
+import { useRouter, Router } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Spinner } from "../../components/Spinner";
 import Layout from "../../components/layout";
@@ -29,6 +29,7 @@ export default function t() {
 		return (
 			<Layout>
 				<article>
+					<button onClick={() => router.back()}>Back</button>
 					<h1>Course Details</h1>
 					<CourseDetailsPage course={course} />
 				</article>
