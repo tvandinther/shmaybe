@@ -8,6 +8,15 @@
   color: white;
 }
 
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterBar>span>label {
+  margin-right: 10px;
+}
+
 /* purgecss start ignore */
 @tailwind base;
 h1 {

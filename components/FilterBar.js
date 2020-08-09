@@ -38,8 +38,7 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue, setSizeValue }
   })()
 
   return (
-    <div>
-      <span className="space-x-3">
+    <div className="filterBar">
         <span>
         <label>Faculty</label>
             <select onChange={handleFacultyInput}>
@@ -72,7 +71,6 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue, setSizeValue }
               <option value="50">50</option>
             </select>
         </span>
-      </span>
     </div>
   );
 }
