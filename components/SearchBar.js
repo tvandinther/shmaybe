@@ -20,9 +20,9 @@ function SearchBar({ setValue }) {
     }
 
     return (
-        <div>
-            <input id="SearchInput" type="text" placeholder="Search" onKeyPress={handleKeypress} onChange={handleInput}></input>
-            <button onClick={handleClick}>Search</button>
+        <div className="flex space-x-3">
+            <input id="SearchInput"  type="text" placeholder="Search" onKeyPress={handleKeypress} onChange={handleInput}></input>
+            <button className="btn-blue bg-UoA" onClick={handleClick}>Search</button>
         </div>
     )
 }

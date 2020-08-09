@@ -1,5 +1,5 @@
 
-import { useRouter } from 'next/router'
+import { useRouter, Router } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Spinner } from "../../components/Spinner";
 import Layout from "../../components/layout";
@@ -11,27 +11,31 @@ export default function t() {
 	const [course, setCourse] = useState(null)
 
 	useEffect(() => {
-        const body = {
-            courseid: courseid,
-        }
-        fetch("/api/course", {
-            method: 'POST',
-            body: JSON.stringify(body),
-        }).then(response => response.json()).then(data => {
-            setCourse(data);
-        });
+		if (courseid !== undefined) {
+			const body = {
+				courseid: courseid,
+			}
+
+			fetch("/api/course", {
+				method: 'POST',
+				body: JSON.stringify(body),
+			}).then(response => response.json()).then(data => {
+				setCourse(data);
+			});
+		}
 	}, [courseid]);
-	
+
 	if (course) {
 		return (
 			<Layout>
 				<article>
+					<button onClick={() => router.back()}>Back</button>
 					<h1>Course Details</h1>
 					<CourseDetailsPage course={course} />
 				</article>
 			</Layout>
-			)
+		)
 	} else {
-		return <Spinner/>
+		return <Spinner />
 	}
 }
