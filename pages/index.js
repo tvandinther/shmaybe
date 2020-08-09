@@ -14,20 +14,20 @@ const LinkA = ({ children, href }) =>
     <a className='pl-4 block pr-4 underline hover:text-white'>{children}</a>
   </Link>
 
-function Home () {
+function Home() {
   // set required to true to force the page to require login.
   // const { user, loading } = useFetchUser({ required: false })
-  let [ searchQuery, setSearchQuery ] = useState("")
+  let [searchQuery, setSearchQuery] = useState("")
   let [facultyValue, setFacultyOption] = useState("");
   let [stageValue, setStageOption] = useState("");
-  let [yearValue, setYearOption] = useState("");
+  let [yearValue, setYearOption] = useState(new Date().getFullYear());
+  let [sizeValue, setSizeValue] = useState(10);
 
   return (
     <Layout>
       <SearchBar setValue={setSearchQuery}></SearchBar>
-      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
-      <p>{searchQuery}</p>
-      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue}></Catalog>
+      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption} setSizeValue={setSizeValue}></FilterBar>
+      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue} sizeValue={sizeValue}></Catalog>
 
 
 

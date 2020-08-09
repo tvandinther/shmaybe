@@ -9,6 +9,9 @@ module.exports = {
       center: true
     },
     extend: {
+      backgroundColor: {
+        'UoA': '#00457E'
+      },
       colors: {
         cyan: '#9cdbff'
       },
