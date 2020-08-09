@@ -37,12 +37,10 @@ handler.post(async (req, res) => {
 		if (value === false || Boolean(value)) url.searchParams.append(key, value)
 	})
 
-	console.log(url.searchParams)
-
 	try {
 		const response = await fetch(url);
 		const responseData = await response.json()
-		res.json(responseData.data)
+		res.json(responseData)
 	} catch (error) {
 		res.json({message: "error", error: error})
 	}

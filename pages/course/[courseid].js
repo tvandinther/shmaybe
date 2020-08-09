@@ -11,17 +11,20 @@ export default function t() {
 	const [course, setCourse] = useState(null)
 
 	useEffect(() => {
-        const body = {
-            courseid: courseid,
-        }
-        fetch("/api/course", {
-            method: 'POST',
-            body: JSON.stringify(body),
-        }).then(response => response.json()).then(data => {
-            setCourse(data);
-        });
+		if (courseid !== undefined) {
+			const body = {
+				courseid: courseid,
+			}
+
+			fetch("/api/course", {
+				method: 'POST',
+				body: JSON.stringify(body),
+			}).then(response => response.json()).then(data => {
+				setCourse(data);
+			});
+		}
 	}, [courseid]);
-	
+
 	if (course) {
 		return (
 			<Layout>
@@ -30,8 +33,8 @@ export default function t() {
 					<CourseDetailsPage course={course} />
 				</article>
 			</Layout>
-			)
+		)
 	} else {
-		return <Spinner/>
+		return <Spinner />
 	}
 }

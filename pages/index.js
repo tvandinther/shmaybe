@@ -20,16 +20,15 @@ function Home () {
   let [ searchQuery, setSearchQuery ] = useState("")
   let [facultyValue, setFacultyOption] = useState("");
   let [stageValue, setStageOption] = useState("");
-  let [yearValue, setYearOption] = useState("");
+  let [yearValue, setYearOption] = useState(new Date().getFullYear());
+  let [sizeValue, setSizeValue] = useState(10);
 
   return (
     <Layout>
-      <h1>Page heading</h1>
-      <p>Interesting content here</p>
       <SearchBar setValue={setSearchQuery}></SearchBar>
-      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption}></FilterBar>
+      <FilterBar setFacultyValue={setFacultyOption} setStageValue={setStageOption} setYearValue={setYearOption} setSizeValue={setSizeValue}></FilterBar>
       <p>{searchQuery}</p>
-      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue}></Catalog>
+      <Catalog searchValue={searchQuery} facultyValue={facultyValue} stageValue={stageValue} yearValue={yearValue} sizeValue={sizeValue}></Catalog>
 
 
 
