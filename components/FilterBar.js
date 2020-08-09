@@ -34,7 +34,7 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
 
   return (
     <div>
-      <span>
+      <span class="flex space-x-3">
         <label>Faculty</label>
             <select onChange={handleFacultyInput}>
               <option value="">All</option>
