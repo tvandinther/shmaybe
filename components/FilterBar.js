@@ -38,33 +38,39 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue, setSizeValue }
   })()
 
   return (
-    <div>
-      <span className="flex space-x-3">
+    <div className="filterBar">
+        <span>
         <label>Faculty</label>
             <select onChange={handleFacultyInput}>
               <option value="">All</option>
               {faculties.map(faculty => <option key={faculty.id} className={`faculty-${faculty.name}`} value={faculty.id}>{faculty.title}</option>)}
             </select>
-        <label>Stage</label>
-            <select onChange={handleStageInput}>
-              <option value="">All</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="4">7</option>
-            </select>
-        <label>Year</label>
-            <select onChange={handleYearInput}>
-                {yearOptions}
-            </select>
-        <label>Results per page</label>
+        </span>    
+        <span>
+          <label>Stage</label>
+              <select onChange={handleStageInput}>
+                <option value="">All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4">7</option>
+              </select>
+        </span>
+        <span>
+          <label>Year</label>
+              <select onChange={handleYearInput}>
+                  {yearOptions}
+              </select>
+          </span>
+        <span>
+          <label>Results per page</label>
             <select onChange={handleSizeInput}>
               <option value="10">10</option>
               <option value="20">20</option>
               <option value="50">50</option>
             </select>
-      </span>
+        </span>
     </div>
   );
 }
