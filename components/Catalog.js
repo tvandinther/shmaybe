@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import Collapsible from 'react-collapsible';
 import { getFacultyFromAcadGroup } from "../tools";
+import Pagination from "./Pagination";
+import Spinner from "./Spinner"
 
-export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) => {
+export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, sizeValue }) => {
     let [data, setData] = useState([]);
+    let [ totalResults, setTotalResults ] = useState(0);
+    let [ resultsFrom, setResultsFrom ] = useState(0);
+    let [ loading, setLoading ] = useState(false);
     let [expanded, setExpanded] = useState(null);
 
     useEffect(() => {
@@ -13,25 +18,32 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
         console.log("year value: ", yearValue)
         const body = {
             text: searchValue,
-            size: 20,
+            size: sizeValue,
             faculty: facultyValue,
             level: stageValue,
             year: yearValue,
+            from: resultsFrom,
         }
+        setLoading(true)
         fetch("/api/courses", {
             method: 'POST',
             body: JSON.stringify(body),
 
         }).then(response => response.json()).then(data => {
-            setData(data);
+            setData(data.data);
+            console.log(data);
+            setLoading(false);
+            setTotalResults(data.total);
         });
-    }, [searchValue, facultyValue, stageValue, yearValue]);
+    }, [searchValue, facultyValue, stageValue, yearValue, sizeValue, resultsFrom]);
 
     console.log(data);
     if (data.length) {
         return (
             <div>
+                {loading && <Spinner/>}
                 {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
+                <Pagination from={resultsFrom} results={data.length} total={totalResults} changePage={setResultsFrom}/>
             </div>
         )
     }
@@ -51,8 +63,8 @@ function CourseItem({ course, expanded, setExpanded }) {
     }
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
-        <div className={`faculty faculty-${faculty.name}`}>
-            <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.title}`}
+        <div className={`faculty-${faculty.name}`}>
+            <span onClick={handleClick} >{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
             </span>
             <span>{`${course.year}`}</span>
         </div>

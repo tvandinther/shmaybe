@@ -2,7 +2,7 @@ import { useState } from "react";
 import { faculties } from "../tools/index.js";
 import { getAllFaculties } from '../tools/index';
 
-function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
+function FilterBar({setFacultyValue, setStageValue ,setYearValue, setSizeValue }) {
 
   const handleFacultyInput = (event) => {
     let input = event.target.value;
@@ -17,6 +17,11 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
   const handleYearInput = (event) => {
     let input = event.target.value;
     setYearValue(input);
+  };
+
+  const handleSizeInput = (event) => {
+    let input = event.target.value;
+    setSizeValue(input);
   };
 
   const faculties = getAllFaculties();
@@ -52,6 +57,12 @@ function FilterBar({setFacultyValue, setStageValue ,setYearValue }) {
         <label>Year</label>
             <select onChange={handleYearInput}>
                 {yearOptions}
+            </select>
+        <label>Results per page</label>
+            <select onChange={handleSizeInput}>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
             </select>
       </span>
     </div>

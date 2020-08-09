@@ -42,7 +42,7 @@ handler.post(async (req, res) => {
 	try {
 		const response = await fetch(url);
 		const responseData = await response.json()
-		res.json(responseData.data)
+		res.json(responseData)
 	} catch (error) {
 		res.json({message: "error", error: error})
 	}
