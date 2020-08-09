@@ -55,7 +55,6 @@ input {
 
 .faculty-science {
   background-color: #9EB0D1;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-science:hover {
@@ -64,59 +63,47 @@ input {
 
 .faculty-business {
   background-color: #C197B9;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-business:hover {
   background-color: #B57CAA
-
 }
 
 .faculty-arts {
   background-color: #D3A8AF;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-arts:hover {
   background-color: #CF9EA6;
-
 }
 
 .faculty-creative {
   background-color: #DBA396;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-creative:hover {
   background-color: #D99A8C;
-
 }
 
 .faculty-engineering {
   background-color: #B4A9C4;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-engineering:hover {
   background-color: #AEA2C0;
-
 }
-
 
 .faculty-law {
   background-color: #9EBAC6;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-law:hover {
   background-color: #91B3C1;
-
 }
 
 
 .faculty-medical {
   background-color: #8EBFBA;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-medical:hover {
@@ -126,12 +113,10 @@ input {
 
 .faculty-education {
   background-color: #AAC29A;
-  @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
 }
 
 .faculty-education:hover {
   background-color: #9FBB8C;
-
 }
 
 .faculty-science:hover {
@@ -151,7 +136,11 @@ label {
 }
 
 .courseList-science {
-  @apply bg-blue-100 mb-3 rounded-b;
+  @apply bg-blue-100;
+}
+
+.courseList {
+  @apply mb-3 rounded-b;
 }
 
 @tailwind components;
