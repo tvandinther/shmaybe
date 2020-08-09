@@ -73,10 +73,12 @@ function CourseItem({ course, expanded, setExpanded }) {
 
     return (
         <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id}>
-            {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
-            <b>Description:</b>
-            {course.description && <p>{course.description}</p>}
-            <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
+            <div className={`courseDescription courseDescription-${faculty.name}`}>
+                {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
+                <b>Description:</b>
+                {course.description && <p>{course.description}</p>}
+                <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
+            </div>
         </Collapsible>
     )
 }
