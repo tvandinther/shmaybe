@@ -7,11 +7,13 @@ import Link from 'next/link';
 //     </li>
 //   </Link>
 
-function Header ({ user, loading }) {
+function Header({ user, loading }) {
   return (
     <header className='bg-UoA'>
       <nav className='container flex items-center flex-wrap  py-2 '>
-        <img className = 'logo' src='/images/logo.png' alt="logo"></img>
+        <a href='/'>
+          <img className='logo' src='/images/logo.png' alt="logo"></img>
+        </a>
         <div id='Brand' className='text-2xl'>
           UoA Course Catalogue
         </div>

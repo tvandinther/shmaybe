@@ -10,10 +10,10 @@ export const CourseDetailsPage = ({ course }) => {
         <div className="">
             <h1>{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}</h1>
             <hr />
-            <p><b>Points</b>{course.unitsAcadProg}</p>
-            <p><b>Course Component</b>{primaryComponent}</p>
-            <p><b>Academic Group</b>{acadGroup.title}</p>
-            <p><b>Academic Organisation</b>{acadOrg}</p>
+            <p><b>Points </b>{course.unitsAcadProg}</p>
+            <p><b>Course Component </b>{primaryComponent}</p>
+            <p><b>Academic Group </b>{acadGroup.title}</p>
+            <p><b>Academic Organisation </b>{acadOrg}</p>
             <br />
             {course.rqrmntDescr && (<div><b>Enrolment Infomation</b>
                 <p style={{ whiteSpace: "pre-line" }}>{course.rqrmntDescr}</p>
