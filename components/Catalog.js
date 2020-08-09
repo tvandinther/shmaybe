@@ -7,10 +7,6 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
     let [expanded, setExpanded] = useState(null);
 
     useEffect(() => {
-        console.log("Search value: ", searchValue)
-        console.log("faculty value: ", facultyValue)
-        console.log("stage value: ", stageValue)
-        console.log("year value: ", yearValue)
         const body = {
             text: searchValue,
             size: 20,
@@ -41,14 +37,14 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue }) =>
 }
 
 function CourseItem({ course, expanded, setExpanded }) {
-    const handleClick = () => {
-        if (expanded != course.id) {
-            setExpanded(course.id)
-        }
-        else {
-            setExpanded(null)
-        }
+    const handleOpening = () =>{
+        setExpanded (course.id);
     }
+
+    const handleClosing =()=>{
+        setExpanded(null);
+    }
+    
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
         <div className={`faculty-${faculty.name}`}>
@@ -60,7 +56,7 @@ function CourseItem({ course, expanded, setExpanded }) {
     const preReq = `${course.rqrmntDescr}`.replace("Prerequisite:", "");
 
     return (
-        <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id}>
+        <Collapsible key={course.id} className={`courseItemList ${course.mainProgram}`} trigger={title} open={expanded == course.id} onTriggerOpening={handleOpening} onTriggerClosing={handleClosing}>
             {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
             <b>Description:</b>
             {course.description && <p>{course.description}</p>}
