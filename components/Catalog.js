@@ -37,8 +37,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
             })
         }).then(response => response.json())
         Promise.all([descSearch, subjectSearch]).then(([descResults, subjectResults]) => {
-            let allResults = mergeCourseResults(subjectResults.data, descResults.data)
-            console.log(allResults)
+            let allResults = mergeCourseResults(subjectResults.data || [], descResults.data || [])
             setLoading(false)
             setTotalResults(Math.max(descResults.total + subjectResults.total))
             setData(allResults)
