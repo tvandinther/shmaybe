@@ -49,7 +49,7 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
     if (data.length) {
         return (
             <div>
-                {loading && <Spinner/>}
+                {loading && <Spinner className='spinner'/>}
                 {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
                 <Pagination from={resultsFrom} results={data.length} total={totalResults} changePage={setResultsFrom}/>
             </div>

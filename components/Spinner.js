@@ -2,10 +2,10 @@
 /**
  * any valid HTML can be used in jsx including SVG statements
  */
-export const Spinner = () =>
+export const Spinner = (props) =>
   <svg
     height='4rem'
-    className='inline'
+    className={`inline ${props.className}`}
     viewBox='0 0 100 100'
     preserveAspectRatio='xMidYMid'
   >
