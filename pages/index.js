@@ -20,8 +20,8 @@ function Home () {
   let [ searchQuery, setSearchQuery ] = useState("")
   let [facultyValue, setFacultyOption] = useState("");
   let [stageValue, setStageOption] = useState("");
-  let [yearValue, setYearOption] = useState("");
-  let [sizeValue, setSizeValue] = useState("");
+  let [yearValue, setYearOption] = useState(new Date().getFullYear());
+  let [sizeValue, setSizeValue] = useState(10);
 
   return (
     <Layout>
