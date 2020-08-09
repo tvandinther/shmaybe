@@ -2,6 +2,20 @@
   cursor: pointer;
 }
 
+.logo {
+  width: 20%;
+}
+
+#Brand {
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+#SearchInput {
+  
+}
+
 /* purgecss start ignore */
 @tailwind base;
 h1 {
