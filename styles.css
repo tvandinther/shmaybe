@@ -3,7 +3,7 @@
 }
 
 #Brand {
-  margin-left: 20px;
+  margin-left: 50px;
   font-weight: bold;
   color: white;
 }
@@ -93,12 +93,21 @@ input {
   background-color: #D3A8AF;
 }
 
+.courseList-business {
+  background-color: #F2ECEF;
+}
+
 .faculty-arts:hover {
   background-color: #CF9EA6;
 }
 
 .colour.faculty-creative {
   background-color: #DBA396;
+}
+.courseList-arts {
+  background-color: #E7DFDC;
+
+ 
 }
 
 .faculty-creative:hover {
@@ -109,12 +118,20 @@ input {
   background-color: #B4A9C4;
 }
 
+.courseList-creative {
+  background-color: #E9E0D9;
+}
+
 .faculty-engineering:hover {
   background-color: #AEA2C0;
 }
 
 .colour.faculty-law {
   background-color: #9EBAC6;
+}
+
+.courseList-engineering {
+  background-color: #D7D4DC;
 }
 
 .faculty-law:hover {
@@ -125,8 +142,15 @@ input {
   background-color: #8EBFBA;
 }
 
+.courseList-law {
+  background-color: #D7E2E2;
+}
+
 .faculty-medical:hover {
   background-color: #85BBB6;
+}
+.courseList-medical {
+  background-color: #DBEAE2;
 }
 
 .colour.faculty-education {
@@ -137,9 +161,76 @@ input {
   background-color: #9FBB8C;
 }
 
+.courseList-education {
+  background-color: #E6EBDF;
+}
+
 .faculty-science:hover {
   @apply bg-blue-300;
 }
+
+.faculty-uoa {
+  background-color: #859DB1;
+}
+
+
+.faculty-uoa:hover {
+  background-color: #7291AA;
+}
+
+.courseList-uoa {
+  background-color: #D6DEDF;
+}
+
+.faculty-bioengineering {
+   background-color: #D1D1D1;
+}
+
+.faculty-bioengineering.hover {
+   background-color: #F1F1F1;
+}
+
+.courseList-bioengineering {
+  background-color: #F1F1F1;
+}
+
+.faculty-liggins {
+   background-color: #D1D1D1;
+}
+
+.faculty-liggins.hover {
+   background-color: #F1F1F1;
+}
+
+.courseList-liggins {
+  background-color: #F1F1F1;
+}
+
+.faculty-continuingEd {
+   background-color: #D1D1D1;
+}
+
+.faculty-continuingEd.hover {
+   background-color: #F1F1F1;
+}
+
+.courseList-continuingEd {
+  background-color: #F1F1F1;
+}
+
+
+.faculty-newStart {
+   background-color: #D1D1D1;
+}
+
+.faculty-newStart.hover {
+   background-color: #F1F1F1;
+}
+
+.courseList-newStart {
+  background-color: #F1F1F1;
+}
+
 
 select {
   @apply rounded py-2 px-4 text-gray-700 mb-3 leading-tight border border-solid border-gray-400;
