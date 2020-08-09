@@ -54,7 +54,69 @@ input {
 }
 
 .faculty-science {
-  @apply bg-blue-200;
+  background-color: #9EB0D1;
+}
+
+.faculty-science:hover {
+   background-color: #577ABE;
+}
+
+.faculty-business {
+  background-color: #C197B9;
+}
+
+.faculty-business:hover {
+  background-color: #B57CAA
+}
+
+.faculty-arts {
+  background-color: #D3A8AF;
+}
+
+.faculty-arts:hover {
+  background-color: #CF9EA6;
+}
+
+.faculty-creative {
+  background-color: #DBA396;
+}
+
+.faculty-creative:hover {
+  background-color: #D99A8C;
+}
+
+.faculty-engineering {
+  background-color: #B4A9C4;
+}
+
+.faculty-engineering:hover {
+  background-color: #AEA2C0;
+}
+
+.faculty-law {
+  background-color: #9EBAC6;
+}
+
+.faculty-law:hover {
+  background-color: #91B3C1;
+}
+
+
+.faculty-medical {
+  background-color: #8EBFBA;
+}
+
+.faculty-medical:hover {
+  background-color: #85BBB6;
+
+}
+
+.faculty-education {
+  background-color: #AAC29A;
+}
+
+.faculty-education:hover {
+  background-color: #9FBB8C;
 }
 
 .faculty-science:hover {
@@ -70,11 +132,15 @@ label {
 }
 
 .courseDescription {
-  @apply py-2 px-4;
+  @apply rounded py-2 px-4;
 }
 
 .courseList-science {
-  @apply bg-blue-100 mb-3 rounded-b;
+  @apply bg-blue-100;
+}
+
+.courseList {
+  @apply mb-3 rounded-b;
 }
 
 @tailwind components;

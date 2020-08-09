@@ -6,9 +6,9 @@ import Spinner from "./Spinner"
 
 export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, sizeValue }) => {
     let [data, setData] = useState([]);
-    let [ totalResults, setTotalResults ] = useState(0);
-    let [ resultsFrom, setResultsFrom ] = useState(0);
-    let [ loading, setLoading ] = useState(false);
+    let [totalResults, setTotalResults] = useState(0);
+    let [resultsFrom, setResultsFrom] = useState(0);
+    let [loading, setLoading] = useState(false);
     let [expanded, setExpanded] = useState(null);
 
     useEffect(() => {
@@ -49,9 +49,9 @@ export const Catalog = ({ searchValue, facultyValue, stageValue, yearValue, size
     if (data.length) {
         return (
             <div>
-                {loading && <Spinner/>}
+                {loading && <Spinner />}
                 {data.map(course => (<CourseItem expanded={expanded} setExpanded={setExpanded} course={course} key={course.id} />))}
-                <Pagination from={resultsFrom} results={data.length} total={totalResults} changePage={setResultsFrom}/>
+                <Pagination from={resultsFrom} results={data.length} total={totalResults} changePage={setResultsFrom} />
             </div>
         )
     }
@@ -71,23 +71,25 @@ function CourseItem({ course, expanded, setExpanded }) {
 
     const faculty = getFacultyFromAcadGroup(course.acadGroup)
     const title = (
-        <div className={`faculty-${faculty.name}`}>
-            <span >{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
+        <div className={`faculty faculty-${faculty.name}`}>
+            <span>{`${course.subject} ${course.catalogNbr}: ${course.titleLong}`}
             </span>
-            <span style={{float: "right"}}>{`${course.year}`}</span>
+            <span style={{ float: "right" }}>{`${course.year}`}</span>
         </div>
     )
     const preReq = `${course.rqrmntDescr}`.replace("Prerequisite:", "");
 
     return (
-        <Collapsible key={course.id} className={`courseItemList faculty-${faculty.name}`} trigger={title} open={expanded == course.id} onTriggerOpening={handleOpening} onTriggerClosing={handleClosing}>
-            <div className={`courseDescription courseDescription-${faculty.name}`}>
-                {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
-                <b>Description:</b>
-                {course.description && <p>{course.description}</p>}
-                <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
-            </div>
-        </Collapsible>
+        <div className={`courseList courseList-${faculty.name}`}>
+            <Collapsible key={course.id} className={`courseItemList`} trigger={title} open={expanded == course.id} onTriggerOpening={handleOpening} onTriggerClosing={handleClosing}>
+                <div className={`courseDescription courseDescription-${faculty.name}`}>
+                    {course.rqrmntDescr && <p><b>Prerequisite:</b>{preReq}</p>}
+                    <b>Description:</b>
+                    {course.description && <p>{course.description}</p>}
+                    <a href={`/course/${course.crseId}`}><u>+ full description</u></a>
+                </div>
+            </Collapsible>
+        </div>
     )
 }
 
